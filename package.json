@@ -1,8 +1,10 @@
 {
-  "name": "mcp-browser-connector",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "@browsermcp/mcp",
+  "version": "0.1.3",
+  "description": "MCP server for browser automation using Browser MCP",
+  "author": "Browser MCP",
+  "homepage": "https://browsermcp.io",
+  "bugs": "https://github.com/browsermcp/mcp/issues",
   "type": "module",
   "bin": {
     "mcp-server-browsermcp": "dist/index.js"
@@ -24,15 +26,15 @@
     "zod": "^3.24.2",
     "zod-to-json-schema": "^3.24.3"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zazubot/mcp-browser-connector.git"
-  },
-  "keywords": [],
-  "author": "zazubot < ahmedkhaled4d",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zazubot/mcp-browser-connector/issues"
-  },
-  "homepage": "https://github.com/zazubot/mcp-browser-connector#readme"
+  "devDependencies": {
+    "@r2r/messaging": "workspace:*",
+    "@repo/config": "workspace:*",
+    "@repo/messaging": "workspace:*",
+    "@repo/types": "workspace:*",
+    "@repo/utils": "workspace:*",
+    "@types/ws": "^8.18.0",
+    "shx": "^0.3.4",
+    "tsup": "^8.4.0",
+    "typescript": "^5.6.2"
+  }
 }
