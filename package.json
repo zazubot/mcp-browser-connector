@@ -3,17 +3,34 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
+  "bin": {
+    "mcp-server-browsermcp": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "typecheck": "tsc --noEmit",
+    "build": "tsup src/index.ts --format esm && shx chmod +x dist/*.js",
+    "prepare": "npm run build",
+    "watch": "tsup src/index.ts --format esm --watch ",
+    "inspector": "CLIENT_PORT=9001 SERVER_PORT=9002 pnpx @modelcontextprotocol/inspector node dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.8.0",
+    "commander": "^13.1.0",
+    "ws": "^8.18.1",
+    "zod": "^3.24.2",
+    "zod-to-json-schema": "^3.24.3"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zazubot/mcp-browser-connector.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "zazubot < ahmedkhaled4d",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/zazubot/mcp-browser-connector/issues"
   },
